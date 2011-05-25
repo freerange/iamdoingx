@@ -36,9 +36,4 @@
 	[updateStatusWindow setIsVisible:YES];
 }
 
-- (IBAction)hideUpdateStatusWindow:(id)sender {
-	NSLog(@"Hide this shizzle");
-	[updateStatusWindow setIsVisible:NO];
-}
-
 @end

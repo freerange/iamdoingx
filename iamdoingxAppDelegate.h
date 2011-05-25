@@ -21,6 +21,5 @@
 - (IBAction)exitApplication:(id)sender;
 - (IBAction)showStatusWindow:(id)sender;
 - (IBAction)showUpdateStatusWindow:(id)sender;
-- (IBAction)hideUpdateStatusWindow:(id)sender;
 
 @end
