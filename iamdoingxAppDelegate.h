@@ -9,17 +9,24 @@
 #import <Cocoa/Cocoa.h>
 
 @interface iamdoingxAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *statusesWindow;
+  NSWindow *statusesWindow;
 	NSWindow *updateStatusWindow;
-	IBOutlet NSMenu *statusMenu;
-    NSStatusItem * statusItem;
+  NSStatusItem *statusItem;
+  NSTextField *statusTextField;
+  
+  IBOutlet NSMenu *statusMenu;
 }
 
 @property (assign) IBOutlet NSWindow *statusesWindow;
 @property (assign) IBOutlet NSWindow *updateStatusWindow;
+@property (assign) IBOutlet NSTextField *statusTextField;
 
 - (IBAction)exitApplication:(id)sender;
 - (IBAction)showStatusWindow:(id)sender;
 - (IBAction)showUpdateStatusWindow:(id)sender;
+- (IBAction)postStatusUpdate:(id)sender;
+
+- (void)bringToFront;
+- (void)postToPW;
 
 @end

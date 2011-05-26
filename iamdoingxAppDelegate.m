@@ -12,6 +12,7 @@
 
 @synthesize statusesWindow;
 @synthesize updateStatusWindow;
+@synthesize statusTextField;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
@@ -30,10 +31,28 @@
 
 - (IBAction)showStatusWindow:(id)sender {
 	[statusesWindow setIsVisible:YES];
+  [self bringToFront];
 }
 
 - (IBAction)showUpdateStatusWindow:(id)sender {
+  [statusTextField setStringValue:@""];
 	[updateStatusWindow setIsVisible:YES];
+  [self bringToFront];
+}
+
+- (IBAction)postStatusUpdate:(id)sender {
+  [self postToPW];
+}
+
+- (void)postToPW {
+  NSString *statusText = [statusTextField stringValue];
+  NSLog(@"%@",statusText);
+
+  [updateStatusWindow setIsVisible:NO];
+}
+
+- (void)bringToFront {
+  [NSApp activateIgnoringOtherApps:YES];
 }
 
 @end
