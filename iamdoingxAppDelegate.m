@@ -7,22 +7,27 @@
 //
 
 #import "iamdoingxAppDelegate.h"
+#import "JSON.h"
 
 @implementation iamdoingxAppDelegate
 
 @synthesize statusesWindow;
 @synthesize updateStatusWindow;
 @synthesize statusTextField;
+@synthesize preferencesWindowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+  // Do stuff here later
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib {  
 	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 	[statusItem setMenu:statusMenu];
 	[statusItem setTitle:@"X"];
 	[statusItem setHighlightMode:YES];
+
+  [statusTextField setTarget:self];
+  [statusTextField setAction:@selector(postToPW)];
 }
 
 - (IBAction)exitApplication:(id)sender {
@@ -35,19 +40,33 @@
 }
 
 - (IBAction)showUpdateStatusWindow:(id)sender {
-  [statusTextField setStringValue:@""];
-	[updateStatusWindow setIsVisible:YES];
-  [self bringToFront];
+  [self showUpdateStatus];
 }
 
 - (IBAction)postStatusUpdate:(id)sender {
   [self postToPW];
 }
 
+- (IBAction)showPreferences:(id)sender {
+  [preferencesWindowController showWindow:sender];
+}
+
+- (void)showUpdateStatus {
+  [statusTextField setStringValue:@""];
+  [updateStatusWindow setIsVisible:YES];
+  [self bringToFront];
+}
+
 - (void)postToPW {
   NSString *statusText = [statusTextField stringValue];
-  NSLog(@"%@",statusText);
+  
+  NSMutableDictionary* jsonObject = [NSMutableDictionary dictionary];
+  [jsonObject setObject:@"status" forKey:@"type"];
+  [jsonObject setObject:statusText forKey:@"content"];
 
+  NSString* jsonString = jsonObject.JSONRepresentation;
+  NSLog(@"This is the json %@", jsonString);
+  
   [updateStatusWindow setIsVisible:NO];
 }
 
