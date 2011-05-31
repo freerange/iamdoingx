@@ -11,7 +11,6 @@
 
 @implementation PreferencesWindowController
 
-@synthesize preferencesWindow;
 @synthesize usernameTextField;
 @synthesize oauthTokenTextField;
 
@@ -37,7 +36,7 @@
 }
 
 - (void)showWindow:(id)sender {
-  [preferencesWindow setIsVisible:YES];
+  [[self window] setIsVisible:YES];
   [NSApp activateIgnoringOtherApps:YES];
 }
 
@@ -45,11 +44,7 @@
   [prefs setObject:[usernameTextField stringValue] forKey:@"Username"];
   [prefs setObject:[oauthTokenTextField stringValue] forKey:@"OauthToken"];
   [prefs synchronize];
-  [preferencesWindow setIsVisible:NO];
-}
-
-- (void)cancel:(id)sender {
-  [preferencesWindow setIsVisible:NO];
+  [[self window] setIsVisible:NO];
 }
 
 - (void)dealloc {

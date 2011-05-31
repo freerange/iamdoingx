@@ -10,19 +10,16 @@
 
 
 @interface PreferencesWindowController : NSWindowController {
-  NSWindow *preferencesWindow;
-  
+
   NSTextField *usernameTextField;
   NSTextField *oauthTokenTextField;
   
   NSUserDefaults * prefs;
 }
 
-@property (assign) IBOutlet NSWindow *preferencesWindow;
-@property (assign) IBOutlet NSTextField *usernameTextField;
+@property (readonly, assign) IBOutlet NSTextField *usernameTextField;
 @property (assign) IBOutlet NSTextField *oauthTokenTextField;
 
 - (IBAction)save:(id)sender;
-- (IBAction)cancel:(id)sender;
 
 @end

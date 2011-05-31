@@ -25,6 +25,7 @@
 		AC4E5230138E70AF00B79B77 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4E5223138E70AF00B79B77 /* SBJsonWriter.m */; };
 		AC4E5231138E70AF00B79B77 /* SBUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4E5225138E70AF00B79B77 /* SBUTF8Stream.m */; };
 		AC4E525D138E771500B79B77 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4E525C138E771500B79B77 /* PreferencesWindowController.m */; };
+		ACE85EA31395417D00E80E77 /* UpdateStatusWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE85EA21395417D00E80E77 /* UpdateStatusWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		AC4E5225138E70AF00B79B77 /* SBUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBUTF8Stream.m; sourceTree = "<group>"; };
 		AC4E525B138E771500B79B77 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		AC4E525C138E771500B79B77 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		ACE85EA11395417D00E80E77 /* UpdateStatusWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateStatusWindowController.h; sourceTree = "<group>"; };
+		ACE85EA21395417D00E80E77 /* UpdateStatusWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateStatusWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				256AC3D90F4B6AC300CF3369 /* iamdoingxAppDelegate.m */,
 				AC4E525B138E771500B79B77 /* PreferencesWindowController.h */,
 				AC4E525C138E771500B79B77 /* PreferencesWindowController.m */,
+				ACE85EA11395417D00E80E77 /* UpdateStatusWindowController.h */,
+				ACE85EA21395417D00E80E77 /* UpdateStatusWindowController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				AC4E5230138E70AF00B79B77 /* SBJsonWriter.m in Sources */,
 				AC4E5231138E70AF00B79B77 /* SBUTF8Stream.m in Sources */,
 				AC4E525D138E771500B79B77 /* PreferencesWindowController.m in Sources */,
+				ACE85EA31395417D00E80E77 /* UpdateStatusWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
