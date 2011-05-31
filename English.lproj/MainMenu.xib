@@ -329,7 +329,7 @@
 			<object class="NSCustomObject" id="192452561">
 				<string key="NSClassName">PreferencesWindowController</string>
 			</object>
-			<object class="NSCustomObject" id="224085982">
+			<object class="NSCustomObject" id="499004254">
 				<string key="NSClassName">UpdateStatusWindowController</string>
 			</object>
 			<object class="NSMenu" id="719187570">
@@ -433,28 +433,12 @@
 					<int key="connectionID">577</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">preferencesWindowController</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="192452561"/>
-					</object>
-					<int key="connectionID">608</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">save:</string>
 						<reference key="source" ref="192452561"/>
 						<reference key="destination" ref="951945995"/>
 					</object>
 					<int key="connectionID">609</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">cancel:</string>
-						<reference key="source" ref="192452561"/>
-						<reference key="destination" ref="185449713"/>
-					</object>
-					<int key="connectionID">610</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -483,7 +467,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">showWindow:</string>
-						<reference key="source" ref="224085982"/>
+						<reference key="source" ref="499004254"/>
 						<reference key="destination" ref="563505984"/>
 					</object>
 					<int key="connectionID">616</int>
@@ -491,7 +475,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusTextField</string>
-						<reference key="source" ref="224085982"/>
+						<reference key="source" ref="499004254"/>
 						<reference key="destination" ref="524291366"/>
 					</object>
 					<int key="connectionID">617</int>
@@ -499,7 +483,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">postStatusUpdate:</string>
-						<reference key="source" ref="224085982"/>
+						<reference key="source" ref="499004254"/>
 						<reference key="destination" ref="803809164"/>
 					</object>
 					<int key="connectionID">618</int>
@@ -507,7 +491,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
-						<reference key="source" ref="224085982"/>
+						<reference key="source" ref="499004254"/>
 						<reference key="destination" ref="141017088"/>
 					</object>
 					<int key="connectionID">619</int>
@@ -806,7 +790,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">615</int>
-						<reference key="object" ref="224085982"/>
+						<reference key="object" ref="499004254"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
