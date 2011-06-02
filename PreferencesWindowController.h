@@ -21,5 +21,6 @@
 @property (assign) IBOutlet NSTextField *oauthTokenTextField;
 
 - (IBAction)save:(id)sender;
+- (IBAction)hideWindow:(id)sender;
 
 @end

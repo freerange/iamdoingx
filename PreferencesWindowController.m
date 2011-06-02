@@ -35,6 +35,10 @@
   [oauthTokenTextField setStringValue:[prefs stringForKey:@"OauthToken"]];
 }
 
+- (IBAction)hideWindow:(id)sender {
+  [[self window] setIsVisible:NO];
+}
+
 - (void)showWindow:(id)sender {
   [[self window] setIsVisible:YES];
   [NSApp activateIgnoringOtherApps:YES];

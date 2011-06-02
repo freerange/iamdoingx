@@ -33,26 +33,34 @@
   NSUserDefaults *prefs = [[NSUserDefaults standardUserDefaults] retain];
   
   NSMutableDictionary* jsonObject = [NSMutableDictionary dictionary];
-  [jsonObject setObject:@"status" forKey:@"type"];
-  [jsonObject setObject:statusText forKey:@"content"];
-  [jsonObject setObject:[prefs stringForKey:@"Username"] forKey:@"user"];
-  
+  [jsonObject setObject:statusText forKey:@"message"];
+
   NSString* jsonString = jsonObject.JSONRepresentation;
   NSLog(@"This is the json %@", jsonString);
   
-  NSURL *url = [NSURL URLWithString:@"http://localhost:5032/test/messages"];
+  NSString* parameters = [NSString stringWithFormat:@"type=status&oauth_token=%@&user=%@", 
+                          [prefs stringForKey:@"OauthToken"],
+                          [prefs stringForKey:@"Username"]
+                          ];
+
+  NSLog(@"The parameters: %@",parameters);
+
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", @"http://pisswhistle.gofreerange.com:5032/freerange/messages", parameters]];
+
+  NSLog(@"Full url: %@", [url absoluteURL]);
+
   NSMutableURLRequest *statusUpdateRequest = [NSMutableURLRequest requestWithURL:url];
   [statusUpdateRequest setHTTPMethod:@"POST"];
   [statusUpdateRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
   [statusUpdateRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
   [statusUpdateRequest addValue:[NSString stringWithFormat:@"%d", [jsonString length]] forHTTPHeaderField:@"Content-Length"];
   [statusUpdateRequest setHTTPBody:[NSData dataWithBytes:[jsonString UTF8String] length:[jsonString length]]];
-  
-  //  NSHTTPURLResponse *response = NULL;
-  //  NSData *responseData = [NSURLConnection sendSynchronousRequest:statusUpdateRequest returningResponse:&response error:nil];
-  //  NSString *responseDataString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-  //  NSLog(@"Response from PW: %@", responseDataString);
-  
+
+  NSHTTPURLResponse *response = NULL;
+  NSData *responseData = [NSURLConnection sendSynchronousRequest:statusUpdateRequest returningResponse:&response error:nil];
+  NSString *responseDataString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+  NSLog(@"Response from PW: %@", responseDataString);
+
   [[self window] setIsVisible:NO];
   [prefs release];
 }
