@@ -36,18 +36,18 @@
   [jsonObject setObject:statusText forKey:@"message"];
 
   NSString* jsonString = jsonObject.JSONRepresentation;
-  NSLog(@"This is the json %@", jsonString);
+  // NSLog(@"This is the json %@", jsonString);
   
   NSString* parameters = [NSString stringWithFormat:@"type=status&oauth_token=%@&user=%@", 
                           [prefs stringForKey:@"OauthToken"],
                           [prefs stringForKey:@"Username"]
                           ];
 
-  NSLog(@"The parameters: %@",parameters);
+  // NSLog(@"The parameters: %@",parameters);
 
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", @"http://pisswhistle.gofreerange.com:5032/freerange/messages", parameters]];
 
-  NSLog(@"Full url: %@", [url absoluteURL]);
+  // NSLog(@"Full url: %@", [url absoluteURL]);
 
   NSMutableURLRequest *statusUpdateRequest = [NSMutableURLRequest requestWithURL:url];
   [statusUpdateRequest setHTTPMethod:@"POST"];
@@ -59,7 +59,7 @@
   NSHTTPURLResponse *response = NULL;
   NSData *responseData = [NSURLConnection sendSynchronousRequest:statusUpdateRequest returningResponse:&response error:nil];
   NSString *responseDataString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-  NSLog(@"Response from PW: %@", responseDataString);
+  // NSLog(@"Response from PW: %@", responseDataString);
 
   [[self window] setIsVisible:NO];
   [prefs release];

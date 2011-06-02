@@ -28,8 +28,8 @@
 
 - (void)awakeFromNib
 {
-  NSLog(@"Loading prefs");
-  NSLog(@"username: %@",[prefs stringForKey:@"Username"]);
+  // NSLog(@"Loading prefs");
+  // NSLog(@"username: %@",[prefs stringForKey:@"Username"]);
 
   [usernameTextField setStringValue:[prefs stringForKey:@"Username"]];
   [oauthTokenTextField setStringValue:[prefs stringForKey:@"OauthToken"]];
